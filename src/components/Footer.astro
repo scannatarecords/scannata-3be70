@@ -6,7 +6,8 @@ interface Props extends Footer {
     'data-sb-field-path'?: string;
 }
 
-const { text, 'data-sb-field-path': fieldPath } = Astro.props;
+const { text: rawText, 'data-sb-field-path': fieldPath } = Astro.props;
+const text = rawText?.replace(/©\s*\d{4}/, '© 2026');
 ---
 
 {
